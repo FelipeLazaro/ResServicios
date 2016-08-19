@@ -1,0 +1,14 @@
+myRequestTemplate:
+  application/json: 
+    #set($inputRoot = $input.path('$'))
+    {
+      "userId": "$input.params('userId')"
+    #set( $limit = $input.params('limit') )
+    #if( $limit.toString() != "" )
+      ,"limit": "$input.params('limit')"
+    #end
+    #set( $skip = $input.params('skip') )
+    #if( $skip.toString() != "" )
+      ,"skip": "$input.params('skip')"
+    #end
+    }

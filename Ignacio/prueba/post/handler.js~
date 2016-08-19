@@ -1,0 +1,18 @@
+'use strict';
+var holaMundo = "Mundos";
+module.exports.handler = function(event, context, cb) {
+  console.log("Nacho " + event.saludo);
+  llamar(holaMundo);
+  console.log(event);
+  return cb(null, {
+    message: 'Go Serverless! Your Lambda function executed successfully!'
+  });
+
+};
+
+
+function llamar(variable){
+  console.log("Nacho es bien vergas" + variable);
+}
+
+
